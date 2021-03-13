@@ -1,0 +1,36 @@
+.menu {
+  $base-distance: 16px;
+  $height: 40px;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  
+  height: $height;
+  overflow: auto;
+  white-space: nowrap;
+  
+  box-shadow: rgba(0, 0, 0, .075) 0px 2px 4px;
+  font-size: 14px;
+  
+  &-item {
+    height: $height;
+    line-height: $height;
+    box-sizing: border-box;
+    padding: 0 $base-distance;
+    color: #8e8e8e;
+    margin: 0;
+
+    &-selected {
+      color: #181818;
+      font-weight: bold;
+      border-bottom: 2px solid #000;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: 0;
+    width: 0;
+    color: transparent;
+  }
+}

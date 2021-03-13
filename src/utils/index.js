@@ -1,0 +1,1 @@
+export const isUsefulList = (array) => (Array.isArray(array) && array.length > 0);

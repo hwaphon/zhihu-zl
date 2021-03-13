@@ -1,0 +1,53 @@
+.cell {
+  $base-distance: 16px;
+
+  margin-left: $base-distance;
+  padding: $base-distance 0;
+  max-width: 100%;
+
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: flex-start;
+
+  border-bottom: 1px solid rgba(#000000, .05);
+
+  &-image {
+    $size: 48px;
+
+    width: $size;
+    height: $size;
+    border-radius: $size / 5;
+  }
+
+  &-content {
+    $base-distance: 16px;
+
+    flex: 1 0 0;
+    max-width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: $base-distance / 4 $base-distance;
+
+    p {
+      line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &-title {
+      margin: 0;
+
+      font-size: 16px;
+      color: #444;
+      font-weight: bold;
+    }
+
+    &-description {
+      margin: 8px 0 0;
+
+      font-size: 14px;
+      color: #666;
+    }
+  }
+}

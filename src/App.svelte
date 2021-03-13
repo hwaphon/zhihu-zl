@@ -1,21 +1,28 @@
 <script>
-	import Navbar from './components/navbar/index.svelte';
+	import Navbar from "@/components/navbar/index.svelte";
+	import Cell from "@/components/news-cell/index.svelte";
+	import Menu from "@/components/menu/index.svelte";
+	import { getTypeList } from "@/adapter/types";
+	import { menuIndex } from "@/store/index";
 
-	export let name;
-	let a = {
-		b: 2
-	}
+	export let list = [];
+	const title = "新闻速递";
 
-	const handleClick = () => {
-		console.log('handleClick');
-		a.b = Math.random();
-	}
+	menuIndex.subscribe((value) => {
+		console.log("update", value);
+	});
+
+	getTypeList().then((data) => (list = data));
 </script>
 
-<main>
-	<Navbar title="知乎专栏"></Navbar>
-</main>
-
 <style type="text/scss">
-  @import "./App.scss";
+	@import "./App.scss";
 </style>
+
+¸
+<main>
+	<Navbar {title} />
+	<Menu {list} bind:active={$menuIndex} />
+	<Cell />
+	<p>{$menuIndex}</p>
+</main>
